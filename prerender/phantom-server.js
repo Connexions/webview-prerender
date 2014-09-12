@@ -23,17 +23,17 @@ var checkComplete = function () {
     }
 
       //Setting all outside links to have 'rel="nofollow"' attribute
-      var links = document.getElementsByTagName('a');
+      var links = document.getElementsByTagName("a");
+      var reg = /http/i;
 
       for(var j =0; j < links.length; j++){
           var anchors = links[j]
           var attr = anchors.getAttribute("href");
 
-          if(attr.indexOf("http") >= 0){
+          if(attr.match(reg)){
               anchors.setAttribute("rel","nofollow");
           }
       }
-
 
     console.log(content);
     phantom.exit();
