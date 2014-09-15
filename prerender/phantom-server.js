@@ -22,7 +22,7 @@ var checkComplete = function () {
       content = content.replace(matches[i], '');
     }
 
-      //Setting all outside links to have 'rel="nofollow"' attribute
+    //Setting all outside links to have 'rel="nofollow"' attribute
     var links = document.getElementsByTagName('a');
     var reg = /^((f|ht)tps?:)?\/\//;
 
