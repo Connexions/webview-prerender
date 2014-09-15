@@ -22,6 +22,19 @@ var checkComplete = function () {
       content = content.replace(matches[i], '');
     }
 
+    //Setting all outside links to have 'rel="nofollow"' attribute
+    var links = document.getElementsByTagName('a');
+    var reg = /^((f|ht)tps?:)?\/\//;
+
+    for(var j = 0, len = links.length; j < len; j++){
+      var anchors = links[j]
+      var attr = anchors.getAttribute('href');
+
+      if(attr.match(reg)){
+        anchors.setAttribute('rel','nofollow');
+          }
+      }
+
     console.log(content);
     phantom.exit();
   }
